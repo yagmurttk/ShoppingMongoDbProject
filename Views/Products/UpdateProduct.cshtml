@@ -1,0 +1,46 @@
+﻿@model ShoppingMongo.Dtos.ProductDtos.GetProductByIdDto
+
+@{
+    ViewData["Title"] = "Ürünü Güncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Ürünü Düzenle</h1>
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <input type="hidden" asp-for="ProductId" />
+
+        <label>Ürün Adı</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Ürün Adı" asp-for="ProductName" />
+        </div>
+        <br />
+
+        <label>Fiyat</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Fiyat" asp-for="ProductPrice" />
+        </div>
+        <br />
+
+        <label>Görsel URL</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Görsel URL" asp-for="ImageUrl" />
+        </div>
+        <br />
+
+        <label>Stok Miktarı</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Stok Miktarı" asp-for="StockCount" />
+        </div>
+        <br />
+
+        <label>Kategori Seçin</label>
+        <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.v">
+            <option value="">Seçiniz</option>
+        </select>
+        <br />
+
+        <button class="btn btn-outline-primary form-control">Kaydet</button>
+    </form>
+</div>

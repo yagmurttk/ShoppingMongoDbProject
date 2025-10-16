@@ -1,0 +1,47 @@
+﻿@model List<ShoppingMongo.Dtos.PDImageDtos.ResultPDImageDto>
+@{
+    ViewData["Title"] = "Ürün Detay Görsel Listesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int sayac = 0;
+}
+
+<h1>Ürün Detay Görselleri</h1>
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th class="text-center">#</th>
+            <th class="text-center">ÜRÜN</th>
+            <th class="text-center">GÖRSEL URL 1</th>
+            <th class="text-center">GÖRSEL URL 2</th>
+            <th class="text-center">GÖRSEL URL 3</th>
+            <th class="text-center">DÜZENLE</th>
+            <th class="text-center">SİL</th>
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            sayac++;
+            <tr>
+                <th class="text-center">@sayac</th>
+                <th class="text-center">@item.ProductName</th>
+                <th class="text-center">@item.ImageUrl1</th>
+                <th class="text-center">@item.ImageUrl2</th>
+                <th class="text-center">@item.ImageUrl3</th>
+                <td>
+                    <a href="/PDImage/UpdatePDImage/@item.PDImageId" class="btn btn-outline-info form-control">
+                        Düzenle
+                    </a>
+                </td>
+                <td>
+                    <a href="/PDImage/DeletePDImage/@item.PDImageId" class="btn btn-outline-danger form-control">
+                        Sil
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+    <a href="/PDImage/CreatePDImage/" class="btn btn-outline-primary form-control">
+        Yeni Ürün Detay Görseli Ekle
+    </a>
+</div>

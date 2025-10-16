@@ -1,0 +1,47 @@
+﻿@model List<ShoppingMongo.Dtos.ProductDtos.ResultProductDto>
+
+@{
+    ViewData["Title"] = "Ürün Listesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int sayac = 0;
+}
+
+<h1>Ürünler</h1>
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th class="text-center">#</th>
+            <th class="text-center">ÜRÜN ADI</th>
+            <th class="text-center">FİYAT</th>
+            <th class="text-center">GÖRSEL URL</th>
+            <th class="text-center">STOK</th>
+            <th class="text-center">KATEGORİ</th>
+            <th class="text-center">DÜZENLE</th>
+            <th class="text-center">SİL</th>
+        </tr>
+        @foreach (var urun in Model)
+        {
+            sayac++;
+            <tr>
+                <th class="text-center">@sayac</th>
+                <th class="text-center">@urun.ProductName</th>
+                <th class="text-center">@urun.ProductPrice ₺</th>
+                <th class="text-center">@urun.ImageUrl</th>
+                <th class="text-center">@urun.StockCount</th>
+                <th class="text-center">@urun.CategoryName</th>
+                <td>
+                    <a href="/Products/UpdateProduct/@urun.ProductId" class="btn btn-outline-info form-control">
+                        Düzenle
+                    </a>
+                </td>
+                <td>
+                    <a href="/Products/DeleteProduct/@urun.ProductId" class="btn btn-outline-danger form-control">
+                        Sil
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+    <a href="/Products/CreateProduct/" class="btn btn-primary form-control">Yeni Ürün Ekle</a>
+</div>

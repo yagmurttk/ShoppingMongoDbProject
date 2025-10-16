@@ -1,0 +1,39 @@
+﻿@model ShoppingMongo.Dtos.PDImageDtos.GetPDImageByIdDto
+@{
+    ViewData["Title"] = "Ürün Detay Görselini Güncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Ürün Detay Görselini Düzenle</h1>
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <input type="hidden" asp-for="PDImageId" />
+
+        <label>Görsel URL 1</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Görsel URL 1" asp-for="ImageUrl1" />
+        </div>
+        <br />
+
+        <label>Görsel URL 2</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Görsel URL 2" asp-for="ImageUrl2" />
+        </div>
+        <br />
+
+        <label>Görsel URL 3</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Görsel URL 3" asp-for="ImageUrl3" />
+        </div>
+        <br />
+
+        <label>Ürün Seçin</label>
+        <select asp-for="ProductId" class="form-control" asp-items="ViewBag.v">
+            <option value="">Seçiniz</option>
+        </select>
+        <br />
+
+        <button class="btn btn-outline-primary form-control">Kaydet</button>
+    </form>
+</div>
