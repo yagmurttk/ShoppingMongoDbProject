@@ -1,4 +1,5 @@
-# 🛍️ ShoppingNightMongo
+# 🛍️ ShoppingMongoDbProject
+
 
 Modern bir e-ticaret uygulaması; **ASP.NET Core MVC** ve **MongoDB** altyapısı ile geliştirilmiş dinamik bir platformdur.  
 Kullanıcılar ürünleri inceleyebilir, kampanyaları slider bileşenleri üzerinden takip edebilir ve e-posta aboneliği ile indirim kuponlarına ulaşabilir.  
